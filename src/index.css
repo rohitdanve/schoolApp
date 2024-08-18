@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #037067;
+    --secondary-color: #4a0093;
+    --title-text-color: #333333;
+    --font-family-Poppins: "Poppins", sans-serif;
+}
+
+.header {
+    width: 100%;
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 20%);
+    background: #fff;
+}
+
+h1 {
+    font-size: 38px;
+    color: var(--title-text-color);
+    font-family: var(--font-family-Poppins);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 32px;
+    color: var(--title-text-color);
+    font-family: var(--font-family-Poppins);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 28px;
+    color: var(--title-text-color);
+    font-family: var(--font-family-Poppins);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 22px;
+    color: var(--title-text-color);
+    font-family: var(--font-family-Poppins);
+    font-weight: 700;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-family-Poppins);
+}
+
+.button_class {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.button_class:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ------header-------*/
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 8px 6px -6px rgb(0 0 0 / 20%);
+    z-index: 999;
+    background: #fff;
+    animation: 1.8s sdb05;
+}
+
+@keyframes sdb05 {
+    0% {
+        transform: translateY(-60px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+.header{
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+header .navbar-nav>a {
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;       
+}
+header .navbar-nav>a:hover{
+    color: var(--primary-color);
+}
+
+/* ---------------------banner section------------------------------ */
+
+.banner_section {
+    background-color: #ffffff;
+}
+
+.banner_section h2 {
+    font-size: 54px;
+}
+
+.banner_section h4 {
+    color: var(--secondary-color);
+}
+
+
+
+
+
+.footer{
+background: #333333;
+}
+
+.footer h4{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-top: 10px;
+    text-transform: capitalize;
+}
+.footer li{ padding:10px 0;}
+.footer li>a{
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+.footer li>a:hover{
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.footer a{
+    text-decoration: none;
+}
