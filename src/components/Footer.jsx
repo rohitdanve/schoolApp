@@ -1,78 +1,152 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import footerlogo from "../../src/assets/images/footer-logo.png";
+import footerlogo from "../../src/assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="footer mt-auto py-3 text-light">
-      <Container >
-        <Row className="border-bottom py-5">
-          <Col md={5} sm={12} className="text-center text-md-start">
-            <div>
-            <Link to="/">
-              <img src={footerlogo} alt="Logo" className="footer-logo mb-3" />
-            </Link>
-            <div>
-              <p>
-                "Welcome to [School Name], where education meets excellence! Our
-                school is dedicated to fostering a nurturing and innovative
-                learning environment for students from kindergarten through 12th
-                grade."
-              </p>
+    <>
+      <footer>
+        <div className="footer-wrap">
+          <Container>
+            <Row>
+              <div className="col-lg-4">
+                <div className="footer_logo">
+                  <img alt="" className="footer-default" src={footerlogo} />
+                </div>
+                <p>
+                  "[School Name] was founded on the belief that every child
+                  deserves a quality education in an environment that supports
+                  their growth and development. With a focus on individualized
+                  learning, we offer a broad curriculum that caters to a wide
+                  range of interests and abilities. Our state-of-the-art
+                  facilities and experienced educators are dedicated to helping
+                  students achieve their best."
+                </p>
+              </div>
+              <div className="col-lg-2 col-md-3">
+                <h3>Quick links</h3>
+                <ul className="footer-links ps-2">
+                 <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> Gallery
+                    </Link>
+                  </li>
+                  <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> Testimonials
+                    </Link>
+                  </li>
+                  <li>
+                    <Link as={Link} to="/" className="text-light">
+                      <i class="bi bi-chevron-right"></i> Contact Us
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-3 col-md-4">
+                <h3>Opening Hours</h3>
+                <ul className="unorderList hourswrp">
+                  <li>
+                    Monday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Tuesday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Wednesday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Thursday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Friday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Saturday <span>08:00 - 02:00</span>
+                  </li>
+                  <li>
+                    Sunday <span>Closed</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-3 col-md-4">
+                <div className="footer_info">
+                  <h3>Get in Touch</h3>
+                  <ul className="footer-adress">
+                    <li className="footer_address">
+                      {" "}
+                      <i className="bi bi-geo-alt"></i>{" "}
+                      <span>123 Lorem Ipsum, 32 sit Atlanta</span>{" "}
+                    </li>
+                    <li className="footer_email">
+                      {" "}
+                      <i className="bi bi-envelope" aria-hidden="true"></i>{" "}
+                      <span>
+                        <a href="mailto:info@example.com"> info@example.com </a>
+                      </span>{" "}
+                    </li>
+                    <li className="footer_phone">
+                      {" "}
+                      <i className="bi bi-telephone"></i>{" "}
+                      <span>
+                        <a href="tel:7704282433"> 770-123-4567</a>
+                      </span>{" "}
+                    </li>
+                  </ul>
+                  <div className="social-icons footer_icon">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i className="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="bi bi-youtube" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Row>
+          </Container>
+        </div>
+        <div class="footer-bottom text-center">
+          <div class="container">
+            <div class="copyright-text">
+              Copyright © International School System 2024. All Rights Reserved
             </div>
-            </div>
-          </Col>
-
-          <Col md={3} sm={12} className="">
-            <nav>
-              <h4>our services</h4>
-              <ul className="list-unstyled">
-                <li>
-                  <Link to="/" className="text-light">
-                  <i class="bi bi-chevron-right"></i> Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="text-light">
-                  <i class="bi bi-chevron-right"></i>  About
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services" className="text-light">
-                  <i class="bi bi-chevron-right"></i> Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="text-light">
-                  <i class="bi bi-chevron-right"></i>  Contact
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </Col>
-          <Col md={4} sm={12} className="">
-          <h4>Contact Us</h4>
-            <div className="pt-2">
-              <a href="mailto:info@yourcompany.com" className="text-light">
-                <i className="bi bi-envelope-fill me-2"></i>info@yourcompany.com
-              </a>
-            </div>
-            <div className="mt-3">
-              <a href="tel:+1234567890" className="text-light">
-                <i className="bi bi-telephone-fill me-2"></i>+123 456 7890
-              </a>
-            </div>
-          </Col>
-
-        </Row>
-        <Row>
-          <Col className="text-center mt-3">
-            <p className="mb-0">&copy; {new Date().getFullYear()} Your school Name. All rights reserved.</p>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 

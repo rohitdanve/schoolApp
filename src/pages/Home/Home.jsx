@@ -3,75 +3,139 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Container, Row, Col } from "react-bootstrap";
-import banner from "../../../src/assets/images/banner.jpg";
+import banner_1 from "../../assets/images/banner/banner-1.jpg";
+import banner_2 from "../../assets/images/banner/banner-2.jpg";
+import scholarship from "../../assets/images/scholarship.png";
+import support from "../../assets/images/support.png";
+import book from "../../assets/images/book.png";
+import teacher from "../../assets/images/teacher.png";
 
 const Home = () => {
   return (
     <>
       <section className=" banner_section ">
-        <Container>
-          <Row>
-            <Col md={6} sm={12} xs={12} className="order-lg-1 order-2">
-              <div className="pt-5 ">
-                <h4>Welcome Edunity online courses</h4>
-                <h2>Achieving Your Dreams Through Education</h2>
-                <p>
-                  "Welcome to [School Name], where education meets excellence!
-                  Our school is dedicated to fostering a nurturing and
-                  innovative learning environment for students from kindergarten
-                  through 12th grade."
-                </p>
-                <a href="" className="btn button_class">
-                  Contact Now
-                </a>
+        <OwlCarousel className="owl-theme" {...options}>
+          <div className="item">
+            <img src={banner_1} className="img-fluid w-100" />
+            <div class="carousel-caption">
+              <h2> International School </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div className="py-3">
+                <a href="#"> Enroll Today</a>
               </div>
-            </Col>
-            <Col lg="6" xs={12} md={6} className="p-0 order-lg-2 order-1">
-              <OwlCarousel className="owl-theme" {...options}>
-                <div className="item">
-                  <img src={banner} className="img-fluid w-100" />
-                </div>
-                <div className="item">
-                  <img src={banner} className="img-fluid w-100" />
-                </div>
-              </OwlCarousel>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <section className="bg-warning">
-      <div className="scrolling-text-container">
-      <div className="scrolling-text">
-          <marquee>
-            "Latest Updates and Announcements from [School Name]", "Stay Informed
-            with [School Name] News", "News & Highlights: What's Happening at
-            [School Name]", "Your Source for [School Name] News and Events",
-            "Catch the Latest Buzz at [School Name]"
-          </marquee>
-        </div>
-        </div>
-      </section>
-      <section className="">
-        <Container>
-          <Row>
-            <Col lg="6" md="6">
-              <div></div>
-            </Col>
-            <Col lg="6">
-              <div>
-                <p>
-                  "[School Name] was founded on the belief that every child
-                  deserves a quality education in an environment that supports
-                  their growth and development. With a focus on individualized
-                  learning, we offer a broad curriculum that caters to a wide
-                  range of interests and abilities. Our state-of-the-art
-                  facilities and experienced educators are dedicated to helping
-                  students achieve their best."
-                </p>
+            </div>
+          </div>
+          <div className="item">
+            <img src={banner_2} className="img-fluid w-100" />
+            <div class="carousel-caption">
+              <h2> Education Bright Future </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div className="py-3">
+                <a href="#"> Enroll Today</a>
               </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </OwlCarousel>
+      </section>
+      <section>
+        <div className="our-course-categories-two ">
+          <Container>
+            <div className="categories_wrap">
+              <ul className="row unorderList">
+                <li className="col-lg-3 col-md-6">
+                  <div className="categories-course">
+                    <div className="item-inner">
+                      <div className="cours-icon">
+                        {" "}
+                        <span className="coure-icon-inner">
+                          {" "}
+                          <img src={teacher} alt="" />{" "}
+                        </span>{" "}
+                      </div>
+                      <div className="cours-title">
+                        <h4>Expert teachers</h4>
+                        <p>
+                          Lorem ipsum dolor sit amet, adipiscing elit. Vivamus
+                          nibh dolor gravida at eleifend
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li className="col-lg-3 col-md-6">
+                  <div className="categories-course">
+                    <div className="item-inner">
+                      <div className="cours-icon">
+                        {" "}
+                        <span className="coure-icon-inner">
+                          {" "}
+                          <img src={book} alt="" />{" "}
+                        </span>{" "}
+                      </div>
+                      <div className="cours-title">
+                        <h4>Quality Education</h4>
+                        <p>
+                          Lorem ipsum dolor sit amet, adipiscing elit. Vivamus
+                          nibh dolor gravida at eleifend
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li className="col-lg-3 col-md-6">
+                  <div className="categories-course">
+                    <div className="item-inner">
+                      <div className="cours-icon">
+                        {" "}
+                        <span className="coure-icon-inner">
+                          {" "}
+                          <img src={support} alt="" />{" "}
+                        </span>{" "}
+                      </div>
+                      <div className="cours-title">
+                        <h4>Life Time Support</h4>
+                        <p>
+                          Lorem ipsum dolor sit amet, adipiscing elit. Vivamus
+                          nibh dolor gravida at eleifend
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li className="col-lg-3 col-md-6">
+                  <div className="categories-course">
+                    <div className="item-inner">
+                      <div className="cours-icon">
+                        {" "}
+                        <span className="coure-icon-inner">
+                          {" "}
+                          <img src={scholarship} alt="" />{" "}
+                        </span>{" "}
+                      </div>
+                      <div className="cours-title">
+                        <h4>Scholarship News</h4>
+                        <p>
+                          Lorem ipsum dolor sit amet, adipiscing elit. Vivamus
+                          nibh dolor gravida at eleifend
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </Container>
+        </div>
       </section>
     </>
   );
