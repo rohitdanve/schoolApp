@@ -22,9 +22,9 @@ function About() {
     <>
       <section>
         <div className="innerHeading-wrap">
-          <div className="container">
+          <Container>
             <h1>About Us</h1>
-          </div>
+          </Container>
         </div>
       </section>
 
@@ -132,7 +132,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -149,7 +149,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -166,7 +166,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -183,7 +183,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -200,7 +200,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -217,7 +217,7 @@ function About() {
                             data-fancybox="images"
                             title="Image Caption Here"
                           >
-                            <i className="fas fa-search-plus"></i>
+                            <i className="bi bi-zoom-in"></i>
                           </a>
                         </div>
                       </div>
@@ -235,7 +235,7 @@ function About() {
             <p>Testimoinials</p>
             <h1> What Parents Say </h1>
           </div>
-          <ul className="owl-carousel testimonials_list unorderList">
+          <ul  className=" owl-carousel unorderList owl-theme" {...testimonials_list}>
             <li className="item">
               <div className="testimonials_sec">
                 <div className="client_box">
@@ -485,3 +485,28 @@ function About() {
 }
 
 export default About;
+const testimonials_list = {   
+  loop: true,
+  rewind: true,
+  margin: 30,
+  nav: false,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+      nav: true,
+    },
+    700: {
+      items: 1,
+      nav: false,
+    },
+    900: {
+      items: 2,
+      nav: false,
+    },
+    1170: {
+      items: 2,
+      nav: true,
+    },
+  }
+}

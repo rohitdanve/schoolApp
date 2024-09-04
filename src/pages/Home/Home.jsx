@@ -1,7 +1,5 @@
 import React from "react";
 import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Container, Row, Col } from "react-bootstrap";
 import banner_1 from "../../assets/images/banner/banner-1.jpg";
 import banner_2 from "../../assets/images/banner/banner-2.jpg";
@@ -56,11 +54,9 @@ const Home = () => {
                   <div className="categories-course">
                     <div className="item-inner">
                       <div className="cours-icon">
-                        {" "}
                         <span className="coure-icon-inner">
-                          {" "}
-                          <img src={teacher} alt="" />{" "}
-                        </span>{" "}
+                          <img src={teacher} alt="" />
+                        </span>
                       </div>
                       <div className="cours-title">
                         <h4>Expert teachers</h4>
@@ -76,11 +72,9 @@ const Home = () => {
                   <div className="categories-course">
                     <div className="item-inner">
                       <div className="cours-icon">
-                        {" "}
                         <span className="coure-icon-inner">
-                          {" "}
-                          <img src={book} alt="" />{" "}
-                        </span>{" "}
+                          <img src={book} alt="" />
+                        </span>
                       </div>
                       <div className="cours-title">
                         <h4>Quality Education</h4>
@@ -96,11 +90,9 @@ const Home = () => {
                   <div className="categories-course">
                     <div className="item-inner">
                       <div className="cours-icon">
-                        {" "}
                         <span className="coure-icon-inner">
-                          {" "}
-                          <img src={support} alt="" />{" "}
-                        </span>{" "}
+                          <img src={support} alt="" />
+                        </span>
                       </div>
                       <div className="cours-title">
                         <h4>Life Time Support</h4>
@@ -116,11 +108,9 @@ const Home = () => {
                   <div className="categories-course">
                     <div className="item-inner">
                       <div className="cours-icon">
-                        {" "}
                         <span className="coure-icon-inner">
-                          {" "}
-                          <img src={scholarship} alt="" />{" "}
-                        </span>{" "}
+                          <img src={scholarship} alt="" />
+                        </span>
                       </div>
                       <div className="cours-title">
                         <h4>Scholarship News</h4>

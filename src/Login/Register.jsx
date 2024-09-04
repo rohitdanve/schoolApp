@@ -25,8 +25,8 @@ const Register = () => {
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
-        <Col md={6}>
+      <Row className="justify-content-md-center login-wrap my-5">
+        <Col md={8}>
           <h2 className="text-center mt-5">Register</h2>
           <Form onSubmit={handleSubmit}>
             {/* Full Name */}
