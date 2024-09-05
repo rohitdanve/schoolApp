@@ -55,7 +55,7 @@ function Login() {
 </div>
     
 <Container>
-      <Row className="justify-content-md-center login-wrap my-5">
+      <Row className="justify-content-md-center login-wrap my-5 ">
         <Col md={8}>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail" className="mb-3">
@@ -89,10 +89,12 @@ function Login() {
                 </Form.Control.Feedback>
               )}
             </Form.Group>
-
-            <Button variant="primary" type="submit" className="w-100">
+              <div className='form-group'>
+              <Button  variant="primary" type="submit" className="w-100 btn border-0">
               Login
             </Button>
+              </div>
+           
           </Form>
           <p className="text-center mt-3">
             Don't have an account? <Link to="/register">Register</Link>

@@ -24,10 +24,19 @@ const Register = () => {
   };
 
   return (
+
+    <>
+    
+    <div className="innerHeading-wrap">
+  <Container>
+    <h1>Register</h1>
+  </Container>
+</div>
+
     <Container>
       <Row className="justify-content-md-center login-wrap my-5">
         <Col md={8}>
-          <h2 className="text-center mt-5">Register</h2>
+  
           <Form onSubmit={handleSubmit}>
             {/* Full Name */}
             <Form.Group controlId="formFullName" className="mb-3">
@@ -120,6 +129,7 @@ const Register = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 
