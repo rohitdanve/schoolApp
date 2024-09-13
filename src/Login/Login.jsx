@@ -1,109 +1,81 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Form, Container, Row, Col } from "react-bootstrap";
+import {Link, useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
+const Login = () => {
+    const [values, setValues] = useState({
+        email: '',
+        password: ''
+    })
+    const navigate = useNavigate()
 
-  const validateForm = () => {
-    const newErrors = {};
-
-    // Validate email
-    if (!email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Email is not valid';
+    const handleChanges = (e) => {
+        setValues({...values, [e.target.name]:e.target.value})
     }
-
-    // Validate password
-    if (!password) {
-      newErrors.password = 'Password is required';
-    } else if (password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
-    } else if (!/[A-Z]/.test(password)) {
-      newErrors.password = 'Password must contain at least one uppercase letter';
-    } else if (!/[a-z]/.test(password)) {
-      newErrors.password = 'Password must contain at least one lowercase letter';
-    } else if (!/[0-9]/.test(password)) {
-      newErrors.password = 'Password must contain at least one digit';
-    } else if (!/[!@#$%^&*]/.test(password)) {
-      newErrors.password = 'Password must contain at least one special character';
+    const handleSumbit = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post('http://localhost:5000/auth/login', values)
+            if(response.status === 201) {
+                localStorage.setItem('token', response.data.token)
+                navigate('/')
+            }
+        } catch(err) {
+            console.log(err.message)
+        }
     }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // Submit the form
-      console.log('Form submitted successfully');
-    }
-  };
-
 
   return (
     <>
-    <div className="innerHeading-wrap">
-  <Container>
-    <h1>Login</h1>
-  </Container>
-</div>
-    
-<Container>
-      <Row className="justify-content-md-center login-wrap my-5 ">
-        <Col md={8}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail" className="mb-3">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                isInvalid={!!errors.email}
-              />
-              {errors.email && (
-                <Form.Control.Feedback type="invalid">
-                  {errors.email}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+      <div className="innerHeading-wrap">
+        <Container>
+          <h1>Login</h1>
+        </Container>
+      </div>
 
-            <Form.Group controlId="formBasicPassword" className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                isInvalid={!!errors.password}
-              />
-              {errors.password && (
-                <Form.Control.Feedback type="invalid">
-                  {errors.password}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-              <div className='form-group'>
-              <Button  variant="primary" type="submit" className="w-100 btn border-0">
-              Login
-            </Button>
-              </div>
-           
-          </Form>
-          <p className="text-center mt-3">
-            Don't have an account? <Link to="/register">Register</Link>
-          </p>
-        </Col>
-      </Row>
-    </Container>
+      <section>
+        <Container className="py-5">
+          <Row>
+            <Col lg={6}>
+              <Form onSubmit={handleSumbit}>
+                <div className="form-group">
+                  <label htmlFor="">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id=""
+                    className="form-control"
+                    onChange={handleChanges}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="">Password</label>
+                  <input
+                    type="text"
+                    name="password"
+                    id=""
+                    className="form-control"
+                    onChange={handleChanges}
+                  />
+                </div>
+                <div className="pt-3">
+                  <button type="submit" className="btn btn-success">
+                    Login
+                  </button>
+                </div>
+                <div className="py-3">
+                  <span>Don't Have Account? </span>
+                  <Link to="/register" className="text-blue-500">Signup</Link>
+                </div>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
-};
+}
 
 export default Login;
