@@ -2,8 +2,35 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import footerlogo from "../../src/assets/images/logo.png";
-
+import { useEffect } from "react";
 const Footer = () => {
+
+  useEffect(() => {
+    const scripts = [
+      "../../src/assets/js/jquery.min.js",
+      "../../src/assets/js/bootstrap.bundle.min.js",      
+      "../../src/assets/js/bootstrap.min.js",
+      "../../src/assets/js/jquery.themepunch.tools.min.js",
+      "../../src/assets/js/jquery.themepunch.revolution.min.js",
+      "../../src/assets/js/jquery.fancybox.min.js",
+      "../../src/assets/js/animate.js",
+      "../../src/assets/js/wow.js",
+      "../../src/assets/js/script.js",
+    ];
+  
+    scripts.forEach((src) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      document.body.appendChild(script);
+
+  
+      return () => {
+        document.body.removeChild(script);
+      };
+    });
+  }, []);
+
   return (
     <>
       <footer>
@@ -146,6 +173,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      
     </>
   );
 };
